@@ -68,7 +68,7 @@ namespace CyLR
             {
                 defaultPaths.Add(@"%SystemDrive%\$Extend\$UsnJrnl:$J");
             }
-            defaultPaths = defaultPaths.Select(Environment.ExpandEnvironmentVariables).ToList();
+            //defaultPaths = defaultPaths.Select(Environment.ExpandEnvironmentVariables).ToList();
 
       			//This section will attempt to collect files or folder locations under each users profile by pulling their ProfilePath from the registry and adding it in front.
       			//Add "defaultPaths.Add($@"{user.ProfilePath}" without the quotes in front of the file / path to be collected in each users profile.
@@ -94,8 +94,9 @@ namespace CyLR
                   defaultPaths.Add($@"%SystemDrive%\$Recycle.Bin\{user.Userkey}\");
               }
             }
-
-            if (Platform.IsUnixLike())
+	    defaultPaths = defaultPaths.Select(Environment.ExpandEnvironmentVariables).ToList();
+            
+	    if (Platform.IsUnixLike())
             {
                 defaultPaths = new List<string> { };
                 tempPaths = new List<string>

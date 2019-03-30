@@ -61,7 +61,7 @@ namespace CyLR
                 @"%PROGRAMDATA%\Microsoft\Search\Data\Applications\Windows",
                 @"%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\Startup",
                 @"%SystemDrive%\$LogFile",
-                @"%SystemDrive%\$MFT"
+                @"%SystemDrive%\$MFT",
 		@"%SystemDrive%\\$Recycle.bin"
             };
             if (Usnjrnl)
